@@ -3,6 +3,9 @@ package main
 import "fmt"
 
 func main() {
+	branching()
+	looping()
+	operatorEksperession()
 	// tipe data boolean
 	var isLogin bool = false
 	fmt.Println(isLogin)

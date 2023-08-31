@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func branching() {
 	// if, else if, else
 	hour := 15
 	if hour < 12 {

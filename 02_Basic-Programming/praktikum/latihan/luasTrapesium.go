@@ -4,7 +4,7 @@ import "fmt"
 
 const p float64 = 0.5
 
-func main() {
+func luasTrapesium() {
 	a := 5.0
 	b := 6.0
 	h := 10.0

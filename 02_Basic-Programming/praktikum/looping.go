@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func looping() {
 	sentence := "Hello"
 	for i := 0; i < len(sentence); i++{
 		fmt.Printf(string(sentence[i]) + "-")

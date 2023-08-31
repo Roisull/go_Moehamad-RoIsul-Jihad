@@ -1,8 +1,8 @@
-package main
+package praktikum
 
 import "fmt"
 
-func main() {
+func contohOperasiDominan() {
 	fmt.Print(dominant(10))
 }
 

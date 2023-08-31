@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func operatorEksperession() {
 	// operand dan operator
 	x := 1 + 2
 	fmt.Println(x)

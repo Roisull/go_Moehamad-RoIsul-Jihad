@@ -4,7 +4,7 @@ import (
     "fmt"
     "strings"
 )
-func main() {
+func palindromeChecker() {
     var input string
     fmt.Println("Apakah palindrome?")
     fmt.Print("Masukkan kata: ")

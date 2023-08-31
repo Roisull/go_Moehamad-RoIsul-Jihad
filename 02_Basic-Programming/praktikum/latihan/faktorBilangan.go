@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func factorBilangan() {
     var num int
     fmt.Print("Masukkan angka: ")
     fmt.Scanln(&num)

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func gradeNilai() {
 	grade := 33
 
 	if grade >= 80 && grade <= 100 {
