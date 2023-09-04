@@ -22,8 +22,10 @@ func fibonacci(n int) int {
 }
 
 func main() {
-	n := 2 // Ganti nilai n sesuai yang Anda inginkan
 	memo = make(map[int]int) // Inisialisasi memo
-	result := fibonacci(n)
-	fmt.Printf("Fibonacci ke-%d adalah %d\n", n, result)
+	fmt.Println(fibonacci(0))  // 0
+	fmt.Println(fibonacci(2))  // 1
+	fmt.Println(fibonacci(9))  // 34
+	fmt.Println(fibonacci(10)) // 55
+	fmt.Println(fibonacci(12)) // 144
 }
