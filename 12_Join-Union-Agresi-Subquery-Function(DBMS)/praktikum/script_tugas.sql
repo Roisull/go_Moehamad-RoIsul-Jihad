@@ -178,6 +178,12 @@ JOIN transaction_details td ON t.transaction_id = td.transaction_id
 JOIN products p ON td.product_id = p.product_id
 WHERE p.product_type_id = 2;
 
+SELECT products.*, product_types.product_type_name
+FROM products 
+LEFT JOIN product_types 
+ON products.product_type_id = product_types.product_type_id;
+
+
 
 
 
