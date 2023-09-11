@@ -136,4 +136,15 @@ ORDER BY customer_name ASC;
 
 SELECT * FROM products LIMIT 5;
 
+UPDATE products
+SET product_name = 'product dummy'
+WHERE product_id = 1;
+select product_name, product_id from products;
+
+UPDATE transaction_details
+SET qty = 3
+WHERE product_id = 1;
+select qty, product_id from transaction_details;
+
+
 
