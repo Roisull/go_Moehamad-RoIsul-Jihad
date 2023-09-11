@@ -172,6 +172,13 @@ FROM transactions
 WHERE customer_id = 1
 GROUP BY customer_id;
 
+SELECT COUNT(*) AS total_transaksi
+FROM transactions t
+JOIN transaction_details td ON t.transaction_id = td.transaction_id
+JOIN products p ON td.product_id = p.product_id
+WHERE p.product_type_id = 2;
+
+
 
 
 
