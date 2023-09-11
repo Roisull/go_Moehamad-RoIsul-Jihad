@@ -85,18 +85,55 @@ VALUES
     (1, 1, 'completed', 2, 50.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), 
     (1, 2, 'completed', 1, 30.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), 
     (1, 3, 'completed', 3, 80.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 
-
 INSERT INTO transaction_details (transaction_id, product_id, status, qty, price, create_at, update_at)
 VALUES
     (2, 4, 'completed', 2, 70.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), 
     (2, 5, 'completed', 1, 40.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), 
     (2, 6, 'completed', 3, 90.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 
-
 INSERT INTO transaction_details (transaction_id, product_id, status, qty, price, create_at, update_at)
 VALUES
     (3, 7, 'completed', 2, 60.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), 
     (3, 8, 'completed', 1, 35.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), 
-    (3, 9, 'completed', 3, 75.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 
-
-
+    (3, 8, 'completed', 3, 75.00, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 
+select * from transaction_details;
     
+    SELECT * FROM products WHERE product_id IN (7, 8, 8);
+    
+SELECT customer_id, gender
+FROM customers
+WHERE gender IN ('M');
+
+SELECT * FROM products
+WHERE product_id = 3;
+
+select * from customers;
+
+ALTER TABLE Customers
+ADD COLUMN customer_name VARCHAR(255);
+
+UPDATE customers
+SET customer_name = 
+    CASE 
+        WHEN customer_id = 1 THEN 'Rona'
+        WHEN customer_id = 2 THEN 'Dono'
+        WHEN customer_id = 3 THEN 'Susili'
+        WHEN customer_id = 4 THEN 'Baraya'
+        WHEN customer_id = 5 THEN 'Baqiha'
+    END
+WHERE customer_id IN (1, 2, 3, 4, 5);
+
+SELECT * FROM customers
+WHERE create_at >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)
+  AND create_at <= CURRENT_DATE()
+  AND customer_name LIKE '%a%';
+
+SELECT COUNT(*) FROM customers
+WHERE gender = 'F';
+
+SELECT *
+FROM customers
+ORDER BY customer_name ASC;
+
+SELECT * FROM products LIMIT 5;
+
+
