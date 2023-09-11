@@ -183,6 +183,11 @@ FROM products
 LEFT JOIN product_types 
 ON products.product_type_id = product_types.product_type_id;
 
+SELECT transactions.*, products.*, customers.*
+FROM transactions
+JOIN transaction_details ON transactions.transaction_id = transaction_details.transaction_id
+JOIN products ON transaction_details.product_id = products.product_id
+JOIN customers ON transactions.customer_id = customers.customer_id;
 
 
 
