@@ -167,5 +167,11 @@ UNION ALL
 SELECT * FROM transactions
 WHERE customer_id = 2;
 
+SELECT customer_id, SUM(total_price) AS total_harga
+FROM transactions 
+WHERE customer_id = 1
+GROUP BY customer_id;
+
+
 
 
