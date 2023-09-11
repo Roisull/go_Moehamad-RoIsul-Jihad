@@ -146,5 +146,18 @@ SET qty = 3
 WHERE product_id = 1;
 select qty, product_id from transaction_details;
 
+DELETE FROM products
+WHERE product_id = 1;
+select * from products;
+
+select * from transaction_details;
+
+delete from transaction_details
+where product_id = 2;
+
+DELETE FROM products
+WHERE product_type_id = 1;
+select * from products;
+
 
 
