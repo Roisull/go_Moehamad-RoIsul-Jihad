@@ -159,5 +159,13 @@ DELETE FROM products
 WHERE product_type_id = 1;
 select * from products;
 
+SELECT * FROM transactions
+WHERE customer_id = 1
+
+UNION ALL
+
+SELECT * FROM transactions
+WHERE customer_id = 2;
+
 
 
