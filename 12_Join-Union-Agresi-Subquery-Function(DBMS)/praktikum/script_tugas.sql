@@ -189,6 +189,48 @@ JOIN transaction_details ON transactions.transaction_id = transaction_details.tr
 JOIN products ON transaction_details.product_id = products.product_id
 JOIN customers ON transactions.customer_id = customers.customer_id;
 
+DELIMITER //
+
+CREATE FUNCTION delete_transaction_details(transaction_id INT)
+RETURNS BOOLEAN
+BEGIN
+    DELETE FROM transaction_details WHERE transaction_id = transaction_id;
+    RETURN TRUE;
+END //
+
+CREATE TRIGGER after_delete_transaction
+AFTER DELETE ON transactions
+FOR EACH ROW
+BEGIN
+    CALL delete_transaction_details(OLD.transaction_id);
+END;
+DELIMITER ;
+
+DELIMITER //
+
+CREATE FUNCTION update_total_qty(transaction_id INT) 
+RETURNS BOOLEAN
+DETERMINISTIC
+BEGIN
+    DECLARE total_quantity INT;
+    
+    SELECT SUM(qty) INTO total_quantity
+    FROM transaction_details
+    WHERE transaction_id = transaction_id;
+    
+    UPDATE transactions
+    SET total_qty = total_quantity
+    WHERE transaction_id = transaction_id;
+    
+    RETURN TRUE;
+END //
+
+DELIMITER ;
+
+
+
+
+
 
 
 
