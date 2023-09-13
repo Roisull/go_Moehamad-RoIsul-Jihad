@@ -227,6 +227,13 @@ END //
 
 DELIMITER ;
 
+SELECT *
+FROM products
+WHERE product_id NOT IN (
+    SELECT DISTINCT product_id
+    FROM transaction_details
+);
+
 
 
 
