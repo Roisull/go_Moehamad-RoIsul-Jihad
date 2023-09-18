@@ -1,0 +1,8 @@
+PING google.com (172.217.194.102) 56(84) bytes of data.
+64 bytes from si-in-f102.1e100.net (172.217.194.102): icmp_seq=1 ttl=109 time=31.3 ms
+64 bytes from si-in-f102.1e100.net (172.217.194.102): icmp_seq=2 ttl=109 time=60.7 ms
+64 bytes from si-in-f102.1e100.net (172.217.194.102): icmp_seq=3 ttl=109 time=32.9 ms
+
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2005ms
+rtt min/avg/max/mdev = 31.264/41.616/60.652/13.477 ms
