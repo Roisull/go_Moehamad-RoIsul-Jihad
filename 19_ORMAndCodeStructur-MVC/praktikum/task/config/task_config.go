@@ -47,9 +47,14 @@ func InitialMigration() {
 
 }
 
+func InitialMigrationBooks() {
+	DB.AutoMigrate(&model.Book{})
+}
+
 func init() {
 
 	InitDB()
 	InitialMigration()
+	InitialMigrationBooks()
 
 }
