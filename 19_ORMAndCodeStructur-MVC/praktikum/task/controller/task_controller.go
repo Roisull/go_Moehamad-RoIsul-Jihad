@@ -7,6 +7,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/user/go_MoehamadRoisulJihad/19_ORMAndCodeStructur-MVC/praktikum/task/config"
 	"github.com/user/go_MoehamadRoisulJihad/19_ORMAndCodeStructur-MVC/praktikum/task/model"
+	"github.com/user/go_MoehamadRoisulJihad/20_Middleware/praktikum/middleware"
 )
 
 // get all users
@@ -149,4 +150,47 @@ func UpdateUserController(c echo.Context) error {
 		"user":    user,
 	})
 
+}
+
+func LoginUserController(c echo.Context) error {
+
+	// mengambil data user dulu
+	user := model.User{}
+
+	c.Bind(&user)
+
+	err := config.DB.Where("email = ? AND password = ?", user.Email, user.Password).First(&user).Error
+	if err != nil {
+
+		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
+
+			"message": "Login Failed",
+			"erorr": err.Error(),
+		})
+
+	}
+
+	// generate token yang sudah dibuat di middleware jwt
+	token, err := middleware.CreateToken(int(user.ID), user.Name)
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
+
+			"message": "Login Failed",
+			"erorr": err.Error(),
+		})
+	}
+
+	userResponse := model.UserResponse{
+		Name: user.Name,
+		Email: user.Email,
+		Token: token,
+	}
+
+
+
+	return c.JSON(http.StatusOK, map[string]interface{}{
+
+		"message": "Login Successfully",
+		"user": userResponse,
+	})
 }
