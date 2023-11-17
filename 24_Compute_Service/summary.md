@@ -1,0 +1,3 @@
+# materi compute service
+
+Layanan komputasi itu adalah serangkaian jasa cloud yang bisa menyediakan kekuatan komputasi buat kita. Jadi, kita bisa jalankan aplikasi, urus data, dan kerjain pekerjaan komputasi tanpa harus repot-repot urus infrastruktur fisiknya langsung. Biasanya, layanan ini mencakup mesin virtual, kontainer, atau fungsi serverless yang bisa kita sesuaikan sumber dayanya sesuai kebutuhan. Pokoknya, layanan komputasi ini bermanfaat banget buat ngatur sumber daya komputasi kita tanpa ribet.
