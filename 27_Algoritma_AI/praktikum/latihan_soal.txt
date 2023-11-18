@@ -1,0 +1,34 @@
+Soal:
+Terdapat sekumpulan data mengenai tulisan dalam bentuk tweet mengenai sebuah kebijakan. Sekumpulan data tersebut ingin dikelompokkan berdasarkan sentimen dari tweet tersebut yaitu sentimen positif dan negatif. 
+Jelaskan algoritma A.I. yang dapat digunakan untuk mengelompokkan tweet tersebut beserta alasannya.
+
+
+Jawaban:
+Algoritma yang digunakan adalah 
+Support Vector Machines (SVM) untuk klasifikasi sistem
+
+Alasan Penggunaan SVM;
+1. Kemampuan Klasifikasi Tinggi:
+    SVM dapat menangani klasifikasi biner dengan baik, yang sesuai dengan kebutuhan kita untuk mengelompokkan tweet menjadi sentimen positif dan negatif.
+2. Penanganan Fitur Non-linear:
+    SVM dapat menangani hubungan yang kompleks dan non-linear antara fitur-fitur dalam data. Ini bermanfaat karena sentimen dalam tweet mungkin tidak selalu ditentukan oleh fitur yang mudah diukur secara linear.
+3. Regularisasi untuk Mencegah Overfitting:
+    SVM menyediakan parameter regularisasi yang dapat diatur untuk mengontrol kompleksitas model. Ini membantu mencegah overfitting, yaitu kondisi di mana model terlalu sesuai dengan data pelatihan dan tidak dapat umumkan pola yang sesuai dengan data baru.
+4. Dukungan terhadap Data yang Tidak Seimbang: 
+    Jika dataset sentimen cenderung tidak seimbang (misalnya, lebih banyak tweet positif daripada negatif, atau sebaliknya), SVM dapat diatur untuk menangani ketidakseimbangan ini dengan memberikan bobot berbeda pada kelas-kelas yang berbeda.
+5. Kernelization untuk Penanganan Fitur Non-linearity:
+    SVM dapat menggunakan teknik kernelization untuk mentransformasikan data ke dalam dimensi yang lebih tinggi, membantu menangani kasus-kasus di mana batas keputusan antar kelas tidak linear.
+
+Langkah-Langkah umum:
+1. Pra-pemrosesan Data: 
+    Bersihkan dan lakukan pra-pemrosesan pada data tweet, termasuk langkah-langkah seperti penghilangan stop words, stemming, atau lemmatization.
+2. Ekstraksi Fitur: 
+    Ubah tweet menjadi representasi vektor fitur yang dapat digunakan oleh SVM. Ini dapat dilakukan dengan metode seperti TF-IDF (Term Frequency-Inverse Document Frequency) atau word embeddings.
+3. Pelatihan Model SVM: 
+    Latih model SVM menggunakan dataset pelatihan yang sudah di-ekstrak fiturnya.
+4. Validasi dan Evaluasi: 
+    Evaluasi model menggunakan dataset validasi atau uji untuk memastikan kinerjanya sesuai dengan harapan. Metrik evaluasi yang umum digunakan termasuk akurasi, presisi, recall, dan F1-score.
+5. Penyetelan Parameter: 
+    Sesuaikan parameter SVM, seperti kernel dan parameter regularisasi, untuk meningkatkan kinerja model.
+6. Penggunaan pada Data Baru: 
+    Setelah model dilatih dan diuji, Anda dapat menggunakannya untuk mengelompokkan sentimen pada tweet baru.
